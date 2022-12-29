@@ -1,10 +1,10 @@
 WHY NOT A GIF HERE? TO SET THE MODE.
 
-# Island name
+# Eldoon Isle
 
 Some text about your lovely island
 
-# Hotel name
+# Itsakon Hotel
 
 Why not add some info about the hotel of your dreams?
 
