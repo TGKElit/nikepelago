@@ -1,0 +1,16 @@
+.room-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+}
+
+.room {
+    height: 80vh;
+    margin: 0 24px 24px 24px;
+    background-color: gray;
+}
