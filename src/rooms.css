@@ -39,6 +39,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 99;
 }
 
 .scroll-button img {
@@ -48,6 +49,7 @@ h2 {
 .scroll-button:hover {
     background-color: rgb(0, 0, 0, 0.5);
     cursor: pointer;
+    
 }
 
 .scroll-button:hover img {

@@ -23,7 +23,7 @@
                 <article class=room id="budget">
                     <h3>Budget</h3>
                     <section class="carousell">
-                        <button class="scroll-button left" type="button">
+                        <button class="scroll-button left" id="budget-left" type="button">
                             <img src="../resources/svg/left-arrow.svg" alt="Previous image">
                         </button>
                         <div class="images">
