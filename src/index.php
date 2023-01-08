@@ -37,9 +37,13 @@
                             <img src="../resources/svg/right-arrow.svg" alt="Next image">
                         </button>
                     </section>
-                    <a href="./room/budget.php">Book Now</a>
-                    <h4>$4/day</h4>
-                    <p>5% discount per 3 days booked!</p>
+                    <div class="book-info">
+                        <a href="./room/budget.php">Book Now</a>
+                        <section class="info">
+                            <h4>$4/day</h4>
+                            <p>5% discount per 3 days booked!</p>
+                        </section>
+                    </div>
                     <section class="calendar-section">
                         <h4>Availability</h4>
                         <div class="calendar">

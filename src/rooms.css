@@ -18,7 +18,7 @@ h2 {
 
 .room {
     height: 80vh;
-    width: 366px;
+    width: 372px;
     margin: 0 24px 24px 24px;
     background-color: gray;
 }
@@ -88,4 +88,23 @@ h2 {
     background-color: bisque;
     float: left;
     object-fit: cover;
+}
+
+.book-info {
+    margin-left: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rooms a {
+    all: unset;
+    background-color: darkgray;
+    height: 72px;
+    width: 176px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
 }
