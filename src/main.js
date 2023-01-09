@@ -1,5 +1,6 @@
 let budgetScrollerPosition = 0;
 
+
 document.getElementById("budget-right").addEventListener("click", function() {
     imageScroller('right');
 });
@@ -23,7 +24,7 @@ function imageScroller(direction) {
     if (budgetScrollerPosition >= 1) {
         budgetScrollerPosition = -2;
     }
-    document.getElementById("budget-scroller").style.transform = "translate(" + budgetScrollerPosition * 340 + "px)";
+    document.getElementById("budget-scroller").style.transform = "translate(" + budgetScrollerPosition * scrollerStep + "px)";
 }
 
 for (let i = 0; i < 31; i++) {

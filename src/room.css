@@ -1,0 +1,43 @@
+.room {
+    background-color: unset;
+    width: fit-content;
+    width: 755px;
+}
+
+.carousell-info {
+    display: flex;
+}
+
+.carousell {
+    width: 540px;
+}
+
+.images img {
+    width: 540px;
+}
+.room a {
+    display: none;
+}
+
+.room h4 {
+    display: none;
+}
+
+.info h4 {
+    display: block;
+}
+
+.calendar {
+    width: 755px;
+    height: 453px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.calendar-body {
+    width: 751px;
+    height: 373px;
+    margin-bottom: 0;
+    margin-top: 0;
+}

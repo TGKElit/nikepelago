@@ -96,7 +96,7 @@ h2 {
     justify-content: space-between;
 }
 
-.rooms a {
+.room a {
     all: unset;
     background-color: darkgray;
     height: 72px;

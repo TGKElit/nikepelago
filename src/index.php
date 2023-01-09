@@ -25,7 +25,7 @@
                 <article class=room id="luxury"></article>
             </div>
         </section>
-
+        <script src="indexPageVariables.js"></script>
         <script src="main.js"></script>
     </body>
 </html>
