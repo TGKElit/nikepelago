@@ -17,7 +17,7 @@ h2 {
 }
 
 .room {
-    height: 80vh;
+    height: 800px;
     width: 372px;
     margin: 0 24px 24px 24px;
     background-color: gray;
@@ -101,10 +101,52 @@ h2 {
     background-color: darkgray;
     height: 72px;
     width: 176px;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     font-size: 32px;
     font-weight: bold;
+}
+
+.calendar {
+    height: 204px;
+    width: 340px;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.calendar-body {
+    height: 168px;
+    width: 336px;
+    background-color: grey;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.calendar-element {
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+.day-of-month {
+    cursor: pointer;
+}
+
+.day-of-month.selected {
+    background-color: #0f0;
+}
+
+.day-of-month.unavailable {
+    background-color: #900;
+    cursor: default;
 }

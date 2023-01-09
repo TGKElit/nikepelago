@@ -25,3 +25,10 @@ function imageScroller(direction) {
     }
     document.getElementById("budget-scroller").style.transform = "translate(" + budgetScrollerPosition * 340 + "px)";
 }
+
+for (let i = 0; i < 31; i++) {
+    let date = document.getElementsByClassName("day-of-month").item(i);
+    date.addEventListener("click", function() {
+        date.classList.toggle("selected");
+    });
+}
