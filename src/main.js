@@ -33,3 +33,16 @@ for (let i = 0; i < 31; i++) {
         date.classList.toggle("selected");
     });
 }
+
+function getSelected() {
+    let selectedDates = Array.from(document.getElementsByClassName("selected"));
+    let booking = [];
+    selectedDates.forEach(date => {
+        booking.push(date.innerHTML);
+    });
+    return booking;
+}
+
+document.getElementById("confirm-button").addEventListener("mousedown", function(){
+    document.getElementById("selected-dates").value = getSelected();
+});
