@@ -46,7 +46,7 @@
     margin-top: 0;
 }
 
-.complete-purchace {
+form section{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -64,4 +64,15 @@
 
 .price {
     display: flex;
+}
+
+.feature input {
+    background-color: gray;
+    width: 36px;
+    height: 36px;
+    margin: 4px;
+}
+
+.feature input:checked {
+    background-color: green;
 }
