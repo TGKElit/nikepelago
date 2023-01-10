@@ -2,25 +2,11 @@
     require("room.php");?>
     <div class="columns">
         <?php
-        require("budgetCard.php");
+        roomCard("budget");
         ?>
-        <form action="." method="POST">
+        <form action="./booking.php" method="POST">
             <input type="hidden" name="room-type" value="budget">
-            <input type="hidden" name="selected-dates" id="selected-dates" value="">
-            <section class="features">
-    
-            </section>
-            <section class="complete-purchace">
-                <input type="text" name="transfer-code">
-                <label for="transfer-code">Transfer code</label>
-                <input type="text" name="name">
-                <label for="name">Name</label>
-                <button type="submit" id="confirm-button">Confirm Purchase</button>
-                <p>Total: $60.25</p>
-            </section>
-        </form>
-        <script src="roomPageVariables.js"></script>
-        <script src="main.js"></script>
-    </div>
-    </body>
-</html>
+            <?php
+            require("roomForm.php");
+            ?>
+        

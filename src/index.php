@@ -1,8 +1,6 @@
 <?php
-    if (!empty($_POST)) {
-        print_r($_POST);
-    }
     require('general.php');
+    require('roomCard.php');
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +9,7 @@
         <link rel="stylesheet" href="general.css">
         <link rel="stylesheet" href="header.css">
         <link rel="stylesheet" href="hero.css">
-        <link rel="stylesheet" href="room-card.css">
+        <link rel="stylesheet" href="roomCard.css">
         <title>Itsakon Hotel</title>
     </head>
     <body>
@@ -23,9 +21,9 @@
         <section class="rooms">
             <h2>Our Rooms</h2>
             <div class="room-container">
-                <?php require("./budgetCard.php")?>
-                <article class=room id="standard"></article>
-                <article class=room id="luxury"></article>
+                <?php roomCard("budget", $daySymbol)?>
+                <?php roomCard("standard", $daySymbol)?>
+                <?php roomCard("luxury", $daySymbol)?>
             </div>
         </section>
         <script src="homePageVariables.js"></script>

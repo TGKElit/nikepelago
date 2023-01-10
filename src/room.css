@@ -59,4 +59,9 @@
     background-color: grey;
     width: 236px;
     height: 64px;
+    cursor: pointer;
+}
+
+.price {
+    display: flex;
 }

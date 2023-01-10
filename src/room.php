@@ -1,5 +1,6 @@
 <?php
 require("general.php");
+require("roomCard.php");
 ?>
 
 <!DOCTYPE html>
@@ -7,7 +8,7 @@ require("general.php");
     <head>
         <link rel="stylesheet" href="./general.css">
         <link rel="stylesheet" href="./header.css">
-        <link rel="stylesheet" href="./room-card.css">
+        <link rel="stylesheet" href="./roomCard.css">
         <link rel="stylesheet" href="room.css">
     </head>
     <body>

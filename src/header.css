@@ -17,6 +17,12 @@ h1 {
     margin: auto 0;
 }
 
+header a {
+    all: unset;
+    margin: auto 0;
+    cursor: pointer;
+}
+
 header .stars {
     height: 100%;
     display: flex;
