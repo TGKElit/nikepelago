@@ -1,6 +1,6 @@
 <?php
-    require('general.php');
-    require('roomCard.php');
+require('general.php');
+require('roomCard.php');
 ?>
 
 <!DOCTYPE html>

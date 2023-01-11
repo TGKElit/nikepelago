@@ -8,8 +8,8 @@
                 for ($i=0; $i < 28; $i++) { 
                     ?>
                     <div class="feature">
-                        <input type="checkbox" name="feature<?=$i?>">
-                        <label for="feature<?=$i?>">A feature! $2</label>
+                        <input type="checkbox" name="features[<?=$i?>]" value="feature, $2">
+                        <label for="features[<?=$i?>]">A feature! $2</label>
                     </div>
                     <?php
                 }

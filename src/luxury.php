@@ -4,7 +4,7 @@
         <?php
         roomCard("luxury");
         ?>
-        <form action="./booking.php" method="POST">
+        <form action="./bookings.php" method="POST">
             <input type="hidden" name="room-type" value="luxury">
             <?php
             require("roomForm.php");
