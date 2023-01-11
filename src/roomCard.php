@@ -7,8 +7,14 @@ function roomCard($roomCard) {
         "SELECT base_price FROM rooms
         WHERE room_standard = '$roomCard'
         ");
-
+    $getBooked = $database->query(
+        "SELECT day_of_month FROM bookings
+        INNER JOIN rooms ON rooms.id = bookings.room_id
+        WHERE room_standard = '$roomCard'
+        ");
     $roomPrice = $getPrice->fetch(PDO::FETCH_ASSOC)['base_price'];
+    $unavailable = $getBooked->fetchAll(PDO::FETCH_COLUMN);
+    
 ?>
 
 <article class=room id="<?=$roomCard?>">
@@ -55,7 +61,7 @@ function roomCard($roomCard) {
                 }
                 for ($i=1; $i <= 31; $i++) {
                     ?>
-                    <div class="calendar-element day-of-month" id="<?=$roomCard?><?=$i?>"><?= $i?></div>
+                    <div class="calendar-element day-of-month <?php if(in_array($i, $unavailable)){echo "unavailable";}?>" id="<?=$roomCard?><?=$i?>"><?= $i?></div>
                     <?php
                 }
                 for ($i=0; $i < 5; $i++) {

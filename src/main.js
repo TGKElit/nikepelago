@@ -52,7 +52,9 @@ function imageScroller(direction, roomType) {
 for (let i = 0; i < Array.from(document.getElementsByClassName("day-of-month")).length; i++) {
     let date = document.getElementsByClassName("day-of-month").item(i);
     date.addEventListener("click", function() {
-        date.classList.toggle("selected");
+        if (!date.classList.contains("unavailable")) {
+            date.classList.toggle("selected");
+        }
     });
 }
 

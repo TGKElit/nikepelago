@@ -78,6 +78,22 @@ if(!empty($_POST)){
                 'transferCode' => $_POST['transfer-code'], 
             ],
         ]);
+        switch ($_POST['room-type']) {
+            case 'budget':
+                $roomId = 1;
+                break;
+            case 'standard':
+                $roomId = 2;
+                break;
+            case 'luxury':
+                $roomId = 3;
+                break;
+        }
+
+        foreach ($selectedDates as $dayOfMonth) {
+            $saveBooking = $database->prepare("INSERT INTO bookings (room_id, day_of_month) VALUES (?, ?)")->execute([$roomId, $dayOfMonth]);
+        }
+        
 
     }else {
         $response = "Not enough money in the Transfer Code";
