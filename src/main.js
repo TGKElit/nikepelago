@@ -71,7 +71,7 @@ document.getElementById("confirm-button")?.addEventListener("mousedown", functio
 
 function updatePrice() {
     let daysBooked = Array.from(document.getElementsByClassName("selected")).length;
-    let basePrice = daysBooked * 4;
+    let basePrice = daysBooked * document.getElementById("room-price").innerHTML.match(/\d/g);;
     let featurePrice = 0;
     let discount = (0.05 * Math.floor(daysBooked/3));
     let price = Math.floor((basePrice + featurePrice) * (1-discount) * 100)/100;

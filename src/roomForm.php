@@ -1,15 +1,23 @@
+<?php
+$getFeatures = $database->query(
+    "SELECT * FROM features
+");
 
+$features = $getFeatures->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
             <input type="hidden" name="price" id="form-price" value="0">
             <input type="hidden" name="selected-dates" id="selected-dates" value="">
             <section class="features">
                 <h4>Features</h4>
                 <div></div>
                 <?php
-                for ($i=0; $i < 28; $i++) { 
+                foreach($features as $feature) { 
                     ?>
                     <div class="feature">
-                        <input type="checkbox" name="features[<?=$i?>]" value="feature, $2">
-                        <label for="features[<?=$i?>]">A feature! $2</label>
+                        <input type="checkbox" name="features[<?=$feature['id']?>]" value="<?=$feature['name'] . "," . $feature['price']?>">
+                        <label for="features[<?=$feature['id']?>]"><?=$feature['name'] . " $" . $feature['price']?></label>
                     </div>
                     <?php
                 }

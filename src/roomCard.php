@@ -1,6 +1,14 @@
 <?php
 function roomCard($roomCard) {
     $daySymbol = ["M", "T", "W", "T", "F", "S", "S"];
+
+    $database = new PDO('sqlite:./itsakon.db');
+    $getPrice = $database->query(
+        "SELECT base_price FROM rooms
+        WHERE room_standard = '$roomCard'
+        ");
+
+    $roomPrice = $getPrice->fetch(PDO::FETCH_ASSOC)['base_price'];
 ?>
 
 <article class=room id="<?=$roomCard?>">
@@ -24,7 +32,7 @@ function roomCard($roomCard) {
         <div class="book-info">
             <a href="./<?=$roomCard?>.php">Book Now</a>
             <section class="info">
-                <h4>$4/day</h4>
+                <h4 id="room-price">$<?=$roomPrice?>/day</h4>
                 <p>5% discount per 3 days booked!</p>
             </section>
         </div>
