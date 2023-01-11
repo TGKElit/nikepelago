@@ -16,7 +16,7 @@ $features = $getFeatures->fetchAll(PDO::FETCH_ASSOC);
                 foreach($features as $feature) { 
                     ?>
                     <div class="feature">
-                        <input type="checkbox" name="features[<?=$feature['id']?>]" value="<?=$feature['name'] . "," . $feature['price']?>">
+                        <input type="checkbox" class="limit<?=$feature['minimal_booking_duration']?>" name="features[<?=$feature['id']?>]" value="<?=$feature['name'] . "," . $feature['price']?>">
                         <label for="features[<?=$feature['id']?>]"><?=$feature['name'] . " $" . $feature['price']?></label>
                     </div>
                     <?php

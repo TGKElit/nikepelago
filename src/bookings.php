@@ -1,6 +1,5 @@
 <?php
 
-//print_r($_POST);
 
 header("Content-Type: application/json");
 

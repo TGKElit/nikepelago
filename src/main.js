@@ -30,6 +30,7 @@ document.getElementById("luxury-left")?.addEventListener("click", function() {
 
 
 
+
 function imageScroller(direction, roomType) {
     console.log(scrollerPosition[roomType]);
     switch (direction) {
@@ -49,13 +50,33 @@ function imageScroller(direction, roomType) {
     document.getElementById(roomType + "-scroller").style.transform = "translate(" + scrollerPosition[roomType] * scrollerStep + "px)";
 }
 
+
+
 for (let i = 0; i < Array.from(document.getElementsByClassName("day-of-month")).length; i++) {
     let date = document.getElementsByClassName("day-of-month").item(i);
     date.addEventListener("click", function() {
         if (!date.classList.contains("unavailable")) {
             date.classList.toggle("selected");
+            disableCheck();
         }
     });
+}
+
+function disableCheck() {
+    for (let i = 0; i < 4; i++) {
+        let checkboxes = document.getElementsByClassName("limit" + i*7);
+        
+        for (let j = 0; j < Array.from(checkboxes).length; j++) {
+            if (i*7 > getSelected().length) {
+                checkboxes.item(j).disabled = true;
+                checkboxes.item(j).checked = false;
+            }
+            else {
+                checkboxes.item(j).removeAttribute('disabled');
+            }     
+        }
+        
+    }
 }
 
 function getSelected() {
@@ -72,15 +93,21 @@ document.getElementById("confirm-button")?.addEventListener("mousedown", functio
 });
 
 function updatePrice() {
+    let checkedFeatures = [];
+    let checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
+    let featurePrice = 0;
+    
+    for (let i = 0; i < checkboxes.length; i++) {
+        featurePrice += parseFloat(checkboxes[i].value.split(",")[1]);
+    }
+    
     let daysBooked = Array.from(document.getElementsByClassName("selected")).length;
     let basePrice = daysBooked * document.getElementById("room-price").innerHTML.match(/\d/g);;
-    let featurePrice = 0;
     let discount = (0.05 * Math.floor(daysBooked/3));
     let price = Math.floor((basePrice + featurePrice) * (1-discount) * 100)/100;
 
     document.getElementById("form-price").value = price;
     document.getElementById("display-price").innerHTML = price;
-    console.log(price);
 }
 
 document.addEventListener("click", function(){
