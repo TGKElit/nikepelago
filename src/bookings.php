@@ -3,9 +3,27 @@
 //print_r($_POST);
 
 header("Content-Type: application/json");
+
+require 'vendor/autoload.php';
+
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
+
+$client = new Client();
+
+
 require("general.php");
 if(!empty($_POST)){
-    if (true /*TODO: Control transfercode n name*/) {
+    $transferResponse = $client->request('POST', 'https://www.yrgopelago.se/centralbank/transferCode', [
+        'form_params' => [
+            'transferCode' => $_POST['transfer-code'],
+            'totalCost' => $_POST['price'],
+        ],
+    ]);
+    
+    $amount = (json_decode($transferResponse->getBody())->amount);
+
+    if ($amount >= $_POST['price']) {
         $selectedDates = explode(",", $_POST["selected-dates"]);
         sort($selectedDates);
         
@@ -53,6 +71,16 @@ if(!empty($_POST)){
                 "addtional_info" => "Thanks for staying at Itsakon Hotel",
             ];
         }
+
+        $client->request('POST', 'https://www.yrgopelago.se/centralbank/deposit', [
+            'form_params' => [
+                'user' => 'Niklas',
+                'transferCode' => $_POST['transfer-code'], 
+            ],
+        ]);
+
+    }else {
+        $response = "Not enough money in the Transfer Code";
     }
 }
 
