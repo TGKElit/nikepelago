@@ -10,13 +10,19 @@ $features = $getFeatures->fetchAll(PDO::FETCH_ASSOC);
             <input type="hidden" name="price" id="form-price" value="0">
             <input type="hidden" name="selected-dates" id="selected-dates" value="">
             <section class="features">
-                <h4>Features</h4>
-                <div></div>
                 <?php
-                foreach($features as $feature) { 
+                foreach($features as $key => $feature) { 
+                    ?>
+                    <?php 
+                    if ($feature['minimal_booking_duration'] !== $features[$key-1]['minimal_booking_duration']) {
+                        ?>
+                        <p>Book atleast <?=$feature['minimal_booking_duration']?> days to access:</p>
+                        <p></p>
+                        <?php
+                    }
                     ?>
                     <div class="feature">
-                        <input type="checkbox" class="limit<?=$feature['minimal_booking_duration']?>" name="features[<?=$feature['id']?>]" value="<?=$feature['name'] . "," . $feature['price']?>">
+                        <input type="checkbox" class="limit<?=$feature['minimal_booking_duration']?>" name="features[<?=$feature['id']?>]" value="<?=$feature['name'] . "," . $feature['price']?>" disabled="true">
                         <label for="features[<?=$feature['id']?>]"><?=$feature['name'] . " $" . $feature['price']?></label>
                     </div>
                     <?php
