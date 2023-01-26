@@ -1,31 +1,37 @@
 header {
-    display: grid;
-    background-color: grey;
-    grid-template-columns: 1fr 4fr 4fr 5fr;
-    /*position: sticky;*/
-    top: 0px;
-    height: 72px;
-    width: 100%;
-    z-index: 100;
+  display: grid;
+  background-color: grey;
+  grid-template-columns: 1fr 4fr 4fr 5fr;
+  /*position: sticky;*/
+  top: 0px;
+  height: 72px;
+  width: 100%;
+  z-index: 100;
+  position: absolute;
 }
 
 header img {
-    margin: auto;
+  margin: auto;
 }
 
 h1 {
-    margin: auto 0;
+  margin: auto 0;
 }
 
 header a {
-    all: unset;
-    margin: auto 0;
-    cursor: pointer;
+  all: unset;
+  margin: auto 0;
+  cursor: pointer;
 }
 
 header .stars {
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .link-visited {
+  text-align: right;
+  margin-right: 10px;
 }
