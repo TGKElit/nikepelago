@@ -1,0 +1,107 @@
+section.logbook {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+section.logbook .section-title {
+  font-size: 62px;
+}
+
+section.logbook img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+  position: absolute;
+}
+
+section.logbook .card-wrapper {
+  margin: 0;
+  padding: 0;
+  padding-left: 40px;
+  height: 600px;
+  width: 70%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: 40px;
+  list-style: none;
+  overflow: scroll;
+  background-color: rgba(255, 255, 255, 0.817);
+  box-shadow: 0 5px 80px #00000024;
+  scroll-snap-type: x mandatory;
+}
+
+section.logbook .card-wrapper .card {
+  padding-left: 40px;
+  scroll-snap-align: start;
+  height: 70%;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: gray;
+  position: relative;
+  box-shadow: 0 5px 10px #00000024;
+  transition: background-color, box-shadow, scale, 0.2s linear;
+}
+
+section.logbook .card-wrapper .card:hover {
+  transition: background-color, box-shadow, scale, 0.2s linear;
+  background-color: rgb(116, 116, 116);
+  box-shadow: 0 7px 80px #0000003f;
+  scale: 1.008;
+}
+
+section.logbook h2:not(.section-title) {
+  width: 280px;
+  font-size: 27px;
+  letter-spacing: 0.5px;
+  padding: 0;
+  margin: 0;
+  text-align: unset;
+}
+
+section.logbook p,
+section.logbook a {
+  color: white;
+}
+
+section.logbook p {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  line-height: 25px;
+}
+
+section.logbook a {
+  color: aquamarine;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+section.logbook a:hover,
+section.logbook a:active {
+  color: rgb(117, 237, 197);
+}
+
+section.logbook span {
+  color: aquamarine;
+}
+
+section.logbook .add-info {
+  position: absolute;
+  bottom: 10px;
+  width: 80%;
+  justify-self: center;
+  background-color: darkgray;
+  color: black;
+  padding: 0 5px;
+  font-size: 16px;
+  letter-spacing: 0;
+}
